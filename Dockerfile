@@ -1,4 +1,4 @@
-FROM python:2.7.15
+FROM python:3.6-stretch
 WORKDIR /usr/src/app
 ADD . /usr/src/app
 
@@ -7,8 +7,8 @@ ENV TZ Asia/Shanghai
 
 
 ## install python requirements 
-RUN pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pyspider --no-cache-dir -r requirements.txt
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone 
+RUN pip install -i https://mirrors.aliyun.com/pypi/simple pyspider --no-cache-dir -r requirements.txt
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 ## install ntpdate, not accept but saving code
 #RUN echo 'deb http://mirrors.163.com/debian/ jessie main non-free contrib \
