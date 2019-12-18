@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 python run.py t
 python run.py c

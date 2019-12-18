@@ -22,4 +22,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 #EXPOSE 5010
 
 #CMD [ "python", "run.py" ]
-ENTRYPOINT [ "./entrypoint" ]
+
+RUN chmod u+x entrypoint.sh
+
+ENTRYPOINT [ "./entrypoint.sh" ]
