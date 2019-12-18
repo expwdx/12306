@@ -1,14 +1,14 @@
 version: "3"
 
 services:
-    ticket:
-        image: 12306_ticket 
-        build: .
-        # ports:
-        volumes:
-            - ./:/usr/src/app
-              # - /etc/localtime:/etc/localtime:ro
-        container_name: 12306ticket
+    fly12306:
+        image: fly12306
+        container_name: fly12306
         privileged: true
+        volumes:
+            - ./TickerConfig.py:/usr/src/app/TickerConfig.py
+            - ./tmp:/usr/src/app/tmp
+            # - /etc/localtime:/etc/localtime:ro
+        # ports:
 
 
